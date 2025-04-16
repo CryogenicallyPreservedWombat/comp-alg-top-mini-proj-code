@@ -7485,7 +7485,8 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Cosheaf-Homology-with-Discrete-Morse-Theory-&amp;-the-Mayer-Vietoris-Sequence">Cosheaf Homology with Discrete Morse Theory &amp; the Mayer-Vietoris Sequence<a class="anchor-link" href="#Cosheaf-Homology-with-Discrete-Morse-Theory-&amp;-the-Mayer-Vietoris-Sequence">¶</a></h1><p>Over the course of this project, we have defined cosheaves on simplicial complexes and explained how each has a sequence of homology groups. We have focused in particular on how an analog of the Mayer-Vietoris sequence that exists in simplicial homology persists in the context of cosheaves. To simplify calculations, we have also investigated how discrete Morse theoretic techniques may be adapted to this context.</p>
 <p>In this notebook, we will provide some software implementations of relevant ideas from the course, including a definition of simplicial complexes and chain complexes, which is where we will begin. We will look at how discrete Morse theory in some sense simplifies this calculation, before essentially repeating the process for cosheaves. We conclude with an examination of the Mayer-Vietoris sequence from these perspectives.</p>
-<p>Note that all of the code written in this notebook was written explicitly for (and over the duration of) the mini project for Computational Algebraic Topology 2024/2025.</p>
+<p>Note that all of the code written in this notebook was written explicitly for (and over the duration of) the mini project for Computational Algebraic Topology 2024/2025.
+The last three digits of the author's candidate number are ####011.</p>
 </div>
 </div>
 </div>
@@ -8466,7 +8467,7 @@ The homologies with coefficients in the sum cosheaf should be the sum of the hom
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="mi">5</span>
@@ -8493,9 +8494,9 @@ The homologies with coefficients in the sum cosheaf should be the sum of the hom
 <span class="n">display</span><span class="p">(</span><span class="n">C2</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">C3</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Betti Numbers for </span><span class="si">{</span><span class="n">k1</span><span class="si">}</span><span class="s2">-sphere wedged </span><span class="si">{</span><span class="n">k2</span><span class="si">}</span><span class="s2">-sphere via the constant ℝ^2 complex:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C1</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Betti Numbers for skyscraper over </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> dimensional simplex:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C2</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Betti Numbers for the sum of those two:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C3</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Betti Numbers for </span><span class="si">{</span><span class="n">k1</span><span class="si">}</span><span class="s2">-sphere wedged </span><span class="si">{</span><span class="n">k2</span><span class="si">}</span><span class="s2">-sphere via the constant ℝ^2 complex:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C1</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Betti Numbers for skyscraper over </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> dimensional simplex:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C2</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Betti Numbers for the sum of those two:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C3</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -8535,9 +8536,9 @@ $$\cdots \to 0 \to \mathbb R^{14} \xrightarrow{\partial_5}\mathbb R^{43} \xright
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-Betti Numbers for 5-sphere wedged 3-sphere via the constant ℝ^2 complex: [2, 0, 0, 2, 0]
-Betti Numbers for skyscraper over 4 dimensional simplex: [0, 0, 0, 0, 1]
-Betti Numbers for the sum of those two: [2, 0, 0, 2, 1]
+Betti Numbers for 5-sphere wedged 3-sphere via the constant ℝ^2 complex: [2, 0, 0, 2, 0, 2]
+Betti Numbers for skyscraper over 4 dimensional simplex: [0, 0, 0, 0, 1, 0]
+Betti Numbers for the sum of those two: [2, 0, 0, 2, 1, 2]
 </pre>
 </div>
 </div>
@@ -8647,7 +8648,7 @@ Betti Numbers for the sum of those two: [2, 0, 0, 2, 1]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="mi">5</span>
@@ -8678,9 +8679,9 @@ Betti Numbers for the sum of those two: [2, 0, 0, 2, 1]
 <span class="n">display</span><span class="p">(</span><span class="n">C2</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">C3</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Betti Numbers for </span><span class="si">{</span><span class="n">k1</span><span class="si">}</span><span class="s2">-sphere wedged </span><span class="si">{</span><span class="n">k2</span><span class="si">}</span><span class="s2">-sphere via the constant ℝ^2 complex:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C1</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Betti Numbers for skyscraper over </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> dimensional simplex:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C2</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Betti Numbers for the sum of those two:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C3</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Betti Numbers for </span><span class="si">{</span><span class="n">k1</span><span class="si">}</span><span class="s2">-sphere wedged </span><span class="si">{</span><span class="n">k2</span><span class="si">}</span><span class="s2">-sphere via the constant ℝ^2 complex:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C1</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Betti Numbers for skyscraper over </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> dimensional simplex:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C2</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Betti Numbers for the sum of those two:"</span><span class="p">,</span> <span class="p">[</span> <span class="n">C3</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -8720,9 +8721,9 @@ $$\cdots \to 0 \to \mathbb R^{4} \xrightarrow{\partial_5}\mathbb R^{3} \xrightar
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-Betti Numbers for 5-sphere wedged 3-sphere via the constant ℝ^2 complex: [2, 0, 0, 2, 0]
-Betti Numbers for skyscraper over 4 dimensional simplex: [0, 0, 0, 0, 1]
-Betti Numbers for the sum of those two: [2, 0, 0, 2, 1]
+Betti Numbers for 5-sphere wedged 3-sphere via the constant ℝ^2 complex: [2, 0, 0, 2, 0, 2]
+Betti Numbers for skyscraper over 4 dimensional simplex: [0, 0, 0, 0, 1, 0]
+Betti Numbers for the sum of those two: [2, 0, 0, 2, 1, 2]
 </pre>
 </div>
 </div>

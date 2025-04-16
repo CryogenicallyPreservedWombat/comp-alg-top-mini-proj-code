@@ -7516,7 +7516,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
@@ -7554,7 +7554,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">SimplicialComplex</span><span class="p">:</span>
@@ -7653,7 +7653,7 @@ Any integer manipulations below are to try to ensure that the resulting basis ha
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">too_small</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">m</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">))</span> <span class="c1"># the bugs I have chased due to `.is_zero_matrix` not being sensitive to floating point errors...</span>
@@ -7939,8 +7939,7 @@ Any integer manipulations below are to try to ensure that the resulting basis ha
     <span class="p">})</span>
 <span class="p">)</span>
 
-<span class="n">C</span> <span class="o">=</span> <span class="n">chain_complex</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
-<span class="n">C</span>
+<span class="n">display</span><span class="p">(</span><span class="n">chain_complex</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -7950,9 +7949,9 @@ Any integer manipulations below are to try to ensure that the resulting basis ha
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedLatex jp-OutputArea-output" data-mime-type="text/latex" tabindex="0">
 $$\cdots \to 0 \to \mathbb R^{18} \xrightarrow{\partial_2}\mathbb R^{27} \xrightarrow{\partial_1}\mathbb R^{9} \to 0 \to \cdots$$
 </div>
 </div>
@@ -7974,10 +7973,12 @@ $$\cdots \to 0 \to \mathbb R^{18} \xrightarrow{\partial_2}\mathbb R^{27} \xright
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">chain_complex</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">-th homology space of the torus is </span><span class="si">{</span><span class="n">C</span><span class="o">.</span><span class="n">betti_number</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2"> dimensional."</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7992,8 +7993,8 @@ $$\cdots \to 0 \to \mathbb R^{18} \xrightarrow{\partial_2}\mathbb R^{27} \xright
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>The 0-th homology space of the torus is 1 dimensional.
-The 1-th homology space of the torus is 0 dimensional.
-The 2-th homology space of the torus is 0 dimensional.
+The 1-th homology space of the torus is 2 dimensional.
+The 2-th homology space of the torus is 1 dimensional.
 </pre>
 </div>
 </div>
@@ -8026,7 +8027,7 @@ The 2-th homology space of the torus is 0 dimensional.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
@@ -8242,7 +8243,7 @@ A benefit of this is that it needs only to be done once: thereafter all spaces t
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.3.2-Example:-Morse-and-Simplicial-Chain-Complexes-for-the-$k$-Sphere">1.3.2 Example: Morse and Simplicial Chain Complexes for the $k$-Sphere<a class="anchor-link" href="#1.3.2-Example:-Morse-and-Simplicial-Chain-Complexes-for-the-$k$-Sphere">¶</a></h3><p>To demonstrate the tremendous reduction in the size of the chain complexes afforded by discrete Morse theoretic techniques, we compute the homology of the $k$-sphere for $k = 4$ (though feel free to download the notebook play around with the value of $k$ in the following cell!) and observe the dimensions of the vector spaces in each chain complex and how large the matrices between them ordinarily are. The Morse complex, meanwhile, is <em>much</em> smaller.</p>
+<h3 id="1.3.2-Example:-Morse-and-Simplicial-Chain-Complexes-for-the-$k$-Sphere">1.3.2 Example: Morse and Simplicial Chain Complexes for the $k$-Sphere<a class="anchor-link" href="#1.3.2-Example:-Morse-and-Simplicial-Chain-Complexes-for-the-$k$-Sphere">¶</a></h3><p>To demonstrate the tremendous reduction in the size of the chain complexes afforded by discrete Morse theoretic techniques, we compute the homology of the $k$-sphere for $k = 4$ (though feel free to download the notebook and play around with the value of $k$ in the following cell!) and observe the dimensions of the vector spaces in each chain complex and how large the matrices between them ordinarily are. The Morse complex, meanwhile, is <em>much</em> smaller.</p>
 <p>Still, as we mentioned earlier, the computation of all the $\Sigma$-paths slows down as $k$ grows.</p>
 </div>
 </div>
@@ -8252,7 +8253,7 @@ A benefit of this is that it needs only to be done once: thereafter all spaces t
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">4</span>
@@ -8569,7 +8570,7 @@ Betti Numbers for the sum of those two: [2, 0, 0, 2, 1]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cosheaf_coherent_acyclic_partial_matching</span><span class="p">(</span><span class="n">cosheaf</span><span class="p">:</span> <span class="n">Cosheaf</span><span class="p">,</span> <span class="n">extra_conditions</span><span class="o">=</span><span class="k">lambda</span> <span class="n">_</span> <span class="p">:</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PartialMatching</span><span class="p">:</span> <span class="c1"># What a mouthful!</span>
@@ -9187,7 +9188,7 @@ We then find the Mayer-Vietoris sequence associated to this decomposition, where
 
 <span class="n">cosheaf</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="p">[</span> <span class="n">Cosheaf</span><span class="o">.</span><span class="n">skyscraper</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="p">{</span><span class="n">v</span><span class="p">})</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="p">],</span> <span class="n">Cosheaf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Cosheaf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># some wacky looking cosheaf!</span>
 
-<span class="n">MayerVietoris</span><span class="o">.</span><span class="n">morse_cosheaf</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">cosheaf</span><span class="p">)</span> <span class="c1"># .display_with_matrices() this looks a bit wonky with the align environment...</span>
+<span class="n">MayerVietoris</span><span class="o">.</span><span class="n">morse_cosheaf</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">cosheaf</span><span class="p">)</span> <span class="c1"># .display_with_matrices() looks a bit wonky to display with matrices within the align environment...</span>
 </pre></div>
 </div>
 </div>
